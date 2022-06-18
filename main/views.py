@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from .models import Estate
 
 
 def index(request):
-    return render(request, "index.html")
+    estates = Estate.objects.all()
+    return render(request, "index.html", {'estates': estates})

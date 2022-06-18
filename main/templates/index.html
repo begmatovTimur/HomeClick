@@ -2,6 +2,10 @@
 
 {% block body %}
 
-<p class="hello">hello</p>
+{% for estate in estates %}
+<h1>{{ estate.get_title }}</h1>
+<p>{{ estate.description }}</p>
+<p class="hello">{{ estate.get_price_per_meter }}</p>
+{% endfor %}
 
 {% endblock %}
