@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<div class="main_box">
+    <form action="" method="POST">
+        {% csrf_token %}
+        
+        <div class="register_box">
+            <div class="string">
+                <p class="str">Авторизатция</p>
+            </div>
+
+            <div class="main_label_box">
+                <div class="box_for_flex">
+                    <div class="label_box">
+                        {{ form.username }}
+                    </div>
+        
+                    <div class="label_box">
+                        {{ form.first_name }}
+                    </div>
+        
+                    <div class="label_box">
+                        {{ form.last_name }}
+                    </div>
+        
+                    <div class="label_box">
+                        {{ form.email }}
+                    </div>
+        
+                    <div class="label_box">
+                        {{ form.password1 }}
+                    </div>
+        
+                    <div class="label_box">
+                        {{ form.password2 }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="register_button_box">
+                <div class="register_button_box_for_flex">
+                    <button type="submit" class="auth_button">Зарегистрировася</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

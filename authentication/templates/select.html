@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+{% if user.is_authenticated %}
+    <div class="main_box">
+        <div class="select_box">
+            <div class="string">
+                <p class="str">Авторизатция</p>
+            </div>
+
+            <div class="radio">
+                <div class="login">
+                    <p class="second_str">Войти через другой аккаунт</p>
+
+                    <div class="button_box">
+                        <a href="{% url 'log_in' %}">
+                            <button class="auth_button">Войти</button>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="logout">
+                    <p class="second_str">Выйти из аккаунта</p>
+
+                    <div class="button_box">
+                        <a href="{% url 'log_out' %}">
+                            <button class="logout_button">Logout</button>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="register">
+                    <p class="second_str">Создать новый аккаунт</p>
+
+                    <div class="button_box">
+                        <a href="{% url 'register' %}">
+                            <button class="auth_button">Регистрироватся</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% else %}
+<div class="main_box">
+    <div class="select_box">
+        <div class="string">
+            <p class="str">Авторизатция</p>
+        </div>
+
+        <div class="radio">
+            <div class="login">
+                <p class="second_str">Войти через другой аккаунт</p>
+
+                <div class="button_box">
+                    <a href="{% url 'log_in' %}">
+                        <button class="auth_button">Войти</button>
+                    </a>
+                </div>
+            </div>
+
+            <div class="register">
+                <p class="second_str">Создать новый аккаунт</p>
+
+                <div class="button_box">
+                    <a href="{% url 'register' %}">
+                        <button class="auth_button">Регистрироватся</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+{% endblock %}
