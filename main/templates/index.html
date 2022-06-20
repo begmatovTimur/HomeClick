@@ -3,9 +3,13 @@
 {% block body %}
 
 {% for estate in estates %}
+{% for category in estate.categories.all %}
+{{ category.name }}
+{% endfor %}
 <h1>{{ estate.get_title }}</h1>
 <p>{{ estate.description }}</p>
 <p class="hello">{{ estate.get_price_per_meter }}</p>
 {% endfor %}
+
 
 {% endblock %}
