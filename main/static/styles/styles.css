@@ -17,7 +17,6 @@ body {
     background: url(https://cdn.pronovostroy.ru/object/2015-09-02/55e6a8b993c0a516558b5278/images/60e20961a57b6.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
 }
 
 .select_box {
@@ -44,6 +43,7 @@ body {
 
 .second_str {
     font-size: 20px;
+    margin-left: 30px;
 }
 
 .button_box {
@@ -109,4 +109,26 @@ body {
     width: 70vh;
     height: 60vh;
     background-color: #fff;
+}
+
+
+@media screen and (max-width: 768px) {
+    .select_box {
+        width: 50%;
+        height: 80vh;
+    }
+
+    .str {
+        font-weight: 600;
+        font-size: 30px;
+    }
+
+    .font_box_for_flex {
+        display: flex;
+        justify-content: center;
+    }
+
+    .radio {
+        display: block;
+    }
 }

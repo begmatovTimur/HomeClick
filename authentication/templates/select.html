@@ -51,7 +51,9 @@
 
         <div class="radio">
             <div class="login">
-                <p class="second_str">Войти через другой аккаунт</p>
+                <div class="font_box_for_flex">
+                    <p class="second_str">Войти в аккаунт</p>
+                </div>
 
                 <div class="button_box">
                     <a href="{% url 'log_in' %}">
@@ -61,7 +63,10 @@
             </div>
 
             <div class="register">
-                <p class="second_str">Создать новый аккаунт</p>
+                <div class="font_box_for_flex">
+                    <p class="second_str">Создать аккаунт</p>
+                </div>
+                
 
                 <div class="button_box">
                     <a href="{% url 'register' %}">
