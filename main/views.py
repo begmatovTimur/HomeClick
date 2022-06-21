@@ -11,3 +11,7 @@ def index(request):
         
     categories = Category.objects.all()
     return render(request, "index.html", {'estates': estates, 'categories': categories})
+
+
+def map(request):
+    return render(request, "map.html")

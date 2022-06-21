@@ -10,7 +10,74 @@
     <title>Document</title>
 </head>
 <body>
+    <nav class="nav__bar">
+        <a href="{% url 'index' %}">
+            <img src="https://national-expertise.ru/wp-content/uploads/2019/01/Cian.ru_.png" class="logo">
+        </a>
+     
+        <div class="nav_contents">  
+            <div class="nav_content">
+                <a href="" class="nav_link">
+                    <p class="nav__item">Аренда</p>
+                </a>
+            </div>
     
+            <div class="nav_content">
+                <a href="" class="nav_link">
+                    <p class="nav__item">Продажа</p>
+                </a>
+            </div>
+    
+            <div class="nav_content">
+                <a href="" class="nav_link">
+                    <p class="nav__item">Новостройка</p>
+                </a>
+            </div>
+    
+            <div class="nav_content">
+                <a href="" class="nav_link">
+                    <p class="nav__item">Дом и участок</p>
+                </a>
+            </div>
+            
+            <div class="nav_content">
+                <a href="" class="nav_link">
+                    <p class="nav__item">Коттеджный поселки</p>
+                </a>
+            </div>
+    
+            <div class="nav_content">
+                <a href="" class="nav_link">
+                    <p class="nav__item">Посуточно</p>
+                </a>
+            </div>
+    
+            <div class="nav_content">
+                <a href="" class="nav_link">
+                    <p class="nav__item">Коммерческая</p>
+                </a>
+            </div>
+    
+            <div class="nav_content">
+                <a href="" class="nav_link">
+                    <p class="nav__item">Ипотека</p>
+                </a>
+            </div>
+    
+            <div class="nav_content">
+                <a href="" class="nav_link">
+                    <p class="nav__item">О нас</p>
+                </a>
+            </div>
+    
+            <div class="button_link">
+                <a href="{% url 'authentication' %}">
+                    <button class="main_page_button">Войти</button>
+                </a>
+            </div>
+        </div>
+    </nav>
+
     {% block body %}
     {% endblock %}
 

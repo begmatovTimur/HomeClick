@@ -129,6 +129,31 @@ body {
     padding: 10px;
 }
 
+.search_from_map {
+    width: 90%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.map_button {
+    width: 150px;
+    height: 40px;
+    color: #000;
+    font-weight: 400;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.map_button:hover  {
+    color: rgb(77, 77, 255);
+}
+
+.search_description {
+    color: #fff;
+}
+
 /* Код для авторизатции */
 .main_box {
     width: 100%;
