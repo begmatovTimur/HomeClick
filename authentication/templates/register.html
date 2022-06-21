@@ -1,51 +1,52 @@
 {% extends "base.html" %}
 
 {% block body %}
+<style>
+    .form-signin {
+        max-width: 350px;
+    }
+</style>
+<section class="text-center pt-5">
+    <main class="form-signin h-100 w-100 m-auto">
+        <form action="" method="POST">
+            {% csrf_token %}
 
-<div class="main_box">
-    <form action="" method="POST">
-        {% csrf_token %}
-        
-        <div class="register_box">
-            <div class="string">
-                <p class="str">Авторизатция</p>
-            </div>
+          <h1 class="h3 mb-3 fw-bold">Register</h1>
+      
+          <div class="form-floating">
+            {{ form.username }}
+            <label for="floatingInput">Usernmae</label>
+          </div>
 
-            <div class="main_label_box">
-                <div class="box_for_flex">
-                    <div class="label_box">
-                        {{ form.username }}
-                    </div>
-        
-                    <div class="label_box">
-                        {{ form.first_name }}
-                    </div>
-        
-                    <div class="label_box">
-                        {{ form.last_name }}
-                    </div>
-        
-                    <div class="label_box">
-                        {{ form.email }}
-                    </div>
-        
-                    <div class="label_box">
-                        {{ form.password1 }}
-                    </div>
-        
-                    <div class="label_box">
-                        {{ form.password2 }}
-                    </div>
-                </div>
-            </div>
+          <div class="form-floating mt-3">
+            {{ form.first_name }}
+            <label for="floatingInput">First name</label>
+          </div>
 
-            <div class="register_button_box">
-                <div class="register_button_box_for_flex">
-                    <button type="submit" class="auth_button">Зарегистрировася</button>
-                </div>
-            </div>
-        </div>
-    </form>
-</div>
+          <div class="form-floating mt-3">
+            {{ form.last_name }}
+            <label for="floatingInput">Last name</label>
+          </div>
+
+          <div class="form-floating mt-3">
+            {{ form.email }}
+            <label for="floatingInput">Email address</label>
+          </div>
+
+          <div class="form-floating mt-3">
+            {{ form.password1 }}
+            <label for="floatingInput">Password</label>
+          </div>
+          
+          <div class="form-floating mt-3">
+            {{ form.password2 }}
+            <label for="floatingInput">Again password</label>
+          </div>
+    
+          <button class="w-100 btn btn-lg mt-3 btn-primary" type="submit">Sign in</button>
+          <p class="mt-5 mb-3 text-muted">© 2017–2022</p>
+        </form>
+      </main>
+</section>
 
 {% endblock %}
