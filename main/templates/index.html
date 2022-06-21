@@ -3,25 +3,24 @@
 {% block body %}
 
 <nav class="nav__bar">
-    <img src="https://national-expertise.ru/wp-content/uploads/2019/01/Cian.ru_.png" alt="" class="logo">
+    <img src="https://national-expertise.ru/wp-content/uploads/2019/01/Cian.ru_.png" class="logo">
  
-    <div class="nav_contents">
-        
-       <div class="nav_content">
+    <div class="nav_contents">  
+        <div class="nav_content">
             <a href="" class="nav_link">
                 <p class="nav__item">Аренда</p>
             </a>
-       </div>
-
-       <div class="nav_content">
-            <a href="" class="nav_link">
-                <p class="nav__item">Продажа</p>
-            </a>
-       </div>
+        </div>
 
         <div class="nav_content">
             <a href="" class="nav_link">
-               <p class="nav__item">Новостройка</p>
+                <p class="nav__item">Продажа</p>
+            </a>
+        </div>
+
+        <div class="nav_content">
+            <a href="" class="nav_link">
+                <p class="nav__item">Новостройка</p>
             </a>
         </div>
 
@@ -62,13 +61,55 @@
         </div>
 
         <div class="button_link">
-            <a href="">
+            <a href="{% url 'authentication' %}">
                 <button class="main_page_button">Войти</button>
             </a>
         </div>
-
     </div>
-
 </nav>
+
+<section class="main_search_title_box">
+    <div class="main_search_title_container">
+        <p class="main_search_title">За недвижемостью - на Циан</p>
+
+        <div class="main_search_links">
+            <div class="main_search_link">
+                <button class="main_search_button">Купить</button>
+            </div>
+
+            <div class="main_search_link">
+                <button class="main_search_button">Снять</button>
+            </div>
+
+            <div class="main_search_link">
+                <button class="main_search_button">Посуточно</button>
+            </div>
+
+            <div class="main_search_link">
+                <button class="main_search_button">Оценить</button>
+            </div>
+
+            <div class="main_search_link">
+                <button class="main_search_button">Ипотека</button>
+            </div>
+
+            <div class="main_search_link">
+                <button class="main_search_button">Подбор риелтора</button>
+            </div>
+        </div>
+
+        <div class="filter_button_box">
+            <button class="first_filter_button">Квартиру в новостройке и вторичке</button>
+
+            <button class="second_filter_button">1, 2 комн</button>
+
+            <button class="third_filter_button">Цена</button>
+
+            <form action="{% url 'index' %}" class="mt-2">
+                <input class="search_input" type="search" name="search" placeholder="Search">
+            </form>
+        </div>
+    </div>
+</section>
 
 {% endblock %}
