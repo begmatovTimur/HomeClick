@@ -10,10 +10,10 @@ class LoginForm(forms.Form):
         max_length=30,
         min_length=5,
         required=True,
-        widget=(forms.TextInput(attrs={'class': 'register_input', 'placeholder': 'Username'}))
+        widget=(forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Username'}))
     )
 
     password = forms.CharField(
         label='Password',
-        widget=(forms.PasswordInput(attrs={'class': 'register_input', 'placeholder': 'Type password'}))
+        widget=(forms.PasswordInput(attrs={'class': 'form-control', 'placeholder': 'Type password'}))
     )
