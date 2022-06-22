@@ -15,3 +15,7 @@ def index(request):
 
 def map(request):
     return render(request, "map.html")
+
+def estate_detail(request, pk):
+    estate = Estate.objects.get(pk=pk)
+    return render(request, 'estate_detail.html', {'estate': estate})
