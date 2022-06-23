@@ -1,3 +1,7 @@
 .form-signin {
     max-width: 300px;
 }
+
+.back-style {
+    background-color: red;
+}
