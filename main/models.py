@@ -34,6 +34,8 @@ class Estate(models.Model):
     room_amount = models.PositiveSmallIntegerField(verbose_name="Количество комнат")
     type = models.CharField(verbose_name="Тип недвижимости", max_length=64, choices=ESTATE_TYPE, default=FLAT)
     categories = models.ManyToManyField(Category, related_name='estates')
+    created_at = models.DateTimeField(auto_now_add=True, null=True, blank=True)
+    updated_at = models.DateTimeField(auto_now=True, blank=True, null=True)
 
     def get_price_per_meter(self):
         return f'{self.price / self.area} м²'
