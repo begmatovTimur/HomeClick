@@ -1,3 +1,5 @@
+import re
+from unicodedata import category
 from django.shortcuts import render
 from .models import Estate, Category
 from django.db.models import Q
@@ -19,3 +21,9 @@ def map(request):
 def estate_detail(request, pk):
     estate = Estate.objects.get(pk=pk)
     return render(request, 'estate_detail.html', {'estate': estate})
+
+
+def category_detail(request, pk):
+    category = Category.objects.get(pk=pk)
+    return render(request, 'category_detail.html', {'category': category})
+ 
