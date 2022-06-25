@@ -7,7 +7,6 @@ def index(request):
     estates = Estate.objects.all()
     search_estates = request.GET.get("search")
     if search_estates:
-        # estates = Estate.objects.filter(Q(description__icontains=search_estates) or Q(price__icontains=search_estates) or Q(room_amount__icontains=search_estates))
         estates = Estate.objects.filter(Q(price__icontains=search_estates) | Q(description__icontains=search_estates))
         
     categories = Category.objects.all()

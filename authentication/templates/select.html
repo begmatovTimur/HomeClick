@@ -3,33 +3,16 @@
 {% block body %}
 
 {% if user.is_authenticated %}
-    <header>
+    <header class="container">
       <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
         <a href="{% url 'index' %}" class="text-dark">
             <h1 class="display-4 fw-normal">Домой</h1>
         </a>
-        <p class="fs-5 text-muted">Выберите то что нужно</p>
       </div>
     </header>
   
-    <main>
-      <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-        <div class="col">
-          <div class="card mb-4 rounded-3 shadow-sm">
-            <div class="card-header py-3">
-              <h4 class="my-0 fw-normal">Login</h4>
-            </div>
-            <div class="card-body">
-              <ul class="list-unstyled mt-3 mb-4">
-                <li>У меня есть аккаунт</li>
-              </ul>
-              <a href="{% url 'log_in' %}">
-                <button type="button" class="w-100 btn btn-lg btn-outline-primary">Login</button>
-              </a>
-            </div>
-          </div>
-        </div>
-
+    <main class="container">
+      <div class="row row-cols-1 row-cols-md-3 mb-3 text-center justify-content-center">
         <div class="col">
           <div class="card mb-4 rounded-3 shadow-sm">
             <div class="card-header py-3">
@@ -46,27 +29,10 @@
             </div>
           </div>
         </div>
-
-        <div class="col">
-          <div class="card mb-4 rounded-3 shadow-sm">
-            <div class="card-header py-3">
-              <h4 class="my-0 fw-normal">Register</h4>
-            </div>
-            <div class="card-body">
-              <ul class="list-unstyled mt-3 mb-4">
-                <li>Создать новый аккаунт</li>
-              </ul>
-              
-              <a href="{% url 'register' %}">
-                <button type="button" class="w-100 btn btn-lg btn-outline-primary">Регистрироватся</button>
-              </a>
-            </div>
-          </div>
-        </div>
       </div>
     </main>
 {% else %}
-<header>
+  <header class="container">
     <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
       <a href="{% url 'index' %}" class="text-dark">
           <h1 class="display-4 fw-normal">Домой</h1>
@@ -75,7 +41,7 @@
     </div>
   </header>
 
-  <main>
+  <main class="container">
     <div class="row row-cols-1 row-cols-md-3 mb-3 text-center justify-content-center">
       <div class="col">
         <div class="card mb-4 rounded-3 shadow-sm">
