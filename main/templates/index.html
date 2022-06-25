@@ -10,15 +10,15 @@
         </div>
       </div>
 
-      {% for estate in estates %}
+      
         <div class="row mb-2">
+          {% for estate in estates %}
          <div class="col-md-6">
              <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
               <div class="col p-4 d-flex flex-column position-static">
                 <strong class="d-inline-block mb-2 text-primary">{{ estate.type }}</strong>
                 <h3 class="mb-0">{{ estate.price }}  {{ estate.currency }}</h3>
-                <div class="mb-1 text-muted">{{ estate.created_at }}</div>
-                <div class="mb-1 text-muted">изменено {{ estate.uptated_at }}</div>
+                <div class="mb-1 text-muted">{{ estate.created_date }}</div>
                 <p class="card-text mb-auto">{{ estate.description | truncatewords:10 }}</p>
                 <a href="{% url 'estate_detail' estate.id %}" class="stretched-link">Continue reading</a>
               </div>
@@ -28,8 +28,9 @@
                 </div>
             </div>
           </div>
+          {% endfor %}
         </div>
-    {% endfor %}
+    
       <div class="row g-5">
         <div class="col-md-8">
           <h3 class="pb-4 mb-4 fst-italic border-bottom">

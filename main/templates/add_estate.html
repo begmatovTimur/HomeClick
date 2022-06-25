@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block body %}
+<form action="" enctype="multipart/form-data" method="POST">
+    {% csrf_token %}
+    {{ form.title }}
+    {{ form.description }}
+    {{ form.price }}
+    {{ form.categories }}
+    {{ form.room_amount }}
+    {{ form.area }}
+    {{ form.currency }}
+    {{ form.type }}
+    <input type="submit" value="submit">
+</form>
+{% endblock %}
