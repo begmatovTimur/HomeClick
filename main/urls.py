@@ -8,4 +8,5 @@ urlpatterns = [
     path('estates/<int:pk>', views.estate_detail, name="estate_detail"),
     path('categories/<int:pk>', views.category_detail, name='category_detail'),
     path('add_estate', views.add_estate, name='add_estate'),
+    path('account', views.account, name = 'account'),
 ]

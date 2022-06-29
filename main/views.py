@@ -13,6 +13,10 @@ def index(request):
     return render(request, "index.html", {'estates': estates, 'categories': categories})
 
 
+def account(request):
+    return render(request, 'account.html')
+
+
 def map(request):
     return render(request, "map.html")
 
