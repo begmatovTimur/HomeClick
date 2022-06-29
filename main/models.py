@@ -18,6 +18,13 @@ ESTATE_TYPE = [
     (LAND, ('Участок недвижимости')),
     (FLAT, ('Квартира')),
 ]
+class User(models.Model):
+    name = models.CharField(verbose_name="Имя", max_length=50)
+    last_name = models.CharField(verbose_name="Фамилия", max_length=50)
+    birthday = models.DateField(verbose_name="День рождения")
+
+    def __str__(self):
+        return self.name
 
 
 class Category(models.Model):
@@ -30,6 +37,7 @@ class Category(models.Model):
 class Estate(models.Model):
     title = models.CharField(verbose_name="Название", max_length=255, null=True, blank=True) 
     description = models.TextField(verbose_name="Описание", null=True, blank=True)
+    author = models.ForeignKey(User,  on_delete=models.CASCADE,  null=True, blank=True)
     price = models.PositiveBigIntegerField(verbose_name="Цена")
     currency = models.CharField(verbose_name="Валюта", max_length=32, choices=CURRENCY, default=DOLLAR)
     area = models.PositiveIntegerField(verbose_name="Площадь")
