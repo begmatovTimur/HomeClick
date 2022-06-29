@@ -1,16 +1,55 @@
 {% extends "base.html" %}
 
 {% block body %}
-<form action="" enctype="multipart/form-data" method="POST">
-    {% csrf_token %}
-    {{ form.title }}
-    {{ form.description }}
-    {{ form.price }}
-    {{ form.categories }}
-    {{ form.room_amount }}
-    {{ form.area }}
-    {{ form.currency }}
-    {{ form.type }}
-    <input type="submit" value="submit">
-</form>
+
+<div class="container">
+    <form action="" enctype="multipart/form-data" method="POST">
+        {% csrf_token %}
+
+        <div class="container mb-3 w-50 p-3">
+            <p class="text-primary">Введите название</p>
+            {{ form.title }}
+        </div>
+
+        <div class="container mb-3 w-50 p-3">
+            <p class="text-primary">Введите описание недвижемости</p>
+            {{ form.description }}
+        </div>
+
+        <div class="container mb-3 w-50 p-3">
+            <p class="text-primary">Введите цену</p>
+            {{ form.price }}
+        </div>
+
+        <div class="container mb-3 w-50 p-3">
+            <p class="text-primary">Выберите валюту</p>
+            {{ form.currency }}
+        </div>
+
+        <div class="container mb-3 w-50 p-3">
+            <p class="text-primary">Выберите категории</p>
+            {{ form.categories }}
+        </div>
+
+        <div class="container mb-3 w-50 p-3">
+            <p class="text-primary">Введите количество комнат</p>
+            {{ form.room_amount }}
+        </div>
+
+        <div class="container mb-3 w-50 p-3">
+            <p class="text-primary">Введите площадь</p>
+            {{ form.area }}
+        </div>
+
+        <div class="container mb-3 w-50 p-3">
+            <p class="text-primary">Выберите тип недвижемости</p>
+            {{ form.type }}
+        </div>
+
+        <div class="container mb-3 w-50 p-3">
+            <button type="submit" class="btn btn-primary">Добавить</button>
+        </div>
+    </form>
+</div>
+
 {% endblock %}

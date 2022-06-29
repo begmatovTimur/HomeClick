@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block body %}
-<div class="col-md-6 container">
+  <div class="col-md-6 container">
     <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
       <div class="col p-4 d-flex flex-column position-static">
         <strong class="d-inline-block mb-2 text-primary">{{ estate.type }}</strong>
@@ -30,6 +30,12 @@
 
           <p class="card-text mb-auto h3">- Цена за метр: {{ estate.get_price_per_meter }}</p>
         </div>
+
+      {% for photo in photos.all %}        
+        <div class="text-center">
+          <img src="{{ photo.img.url }}" alt="">
+        </div>
+      {% endfor %}
     </div>
   </div>
 {% endblock %}

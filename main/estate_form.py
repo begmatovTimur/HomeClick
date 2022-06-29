@@ -13,22 +13,22 @@ class EstateForm(forms.ModelForm):
     )  
     title = forms.CharField(
         max_length=255,
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'title'}) 
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Введите название'}) 
     )
     description = forms.CharField(
         max_length=1000,
-        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'text'}) 
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Введите описание'}) 
     )
     price = forms.CharField(
-        widget= forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'price'})
+        widget= forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Введите цену'})
     )   
     currency = forms.CharField(label='Currency', widget=forms.RadioSelect(choices=CURRENCY))
         
     area = forms.CharField(
-        widget= forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'area' })
+        widget= forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Введите площадь' })
     )
     room_amount = forms.CharField(
-        widget= forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'room amout' })
+        widget= forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Введите количество комнат' })
     )
     type = forms.CharField(
         label='Type', widget=forms.RadioSelect(choices=ESTATE_TYPE)

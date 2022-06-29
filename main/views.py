@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Estate, Category
+from .models import Estate, Category, Photo
 from django.db.models import Q
 from .estate_form import EstateForm
 
@@ -18,7 +18,8 @@ def map(request):
 
 def estate_detail(request, pk):
     estate = Estate.objects.get(pk=pk)
-    return render(request, 'estate_detail.html', {'estate': estate})
+    photos = Photo.objects.filter(estate__pk=pk)
+    return render(request, 'estate_detail.html', {'estate': estate, 'photos': photos})
 
 
 def category_detail(request, pk):
@@ -30,4 +31,4 @@ def add_estate(request):
     if form.is_valid():
         form.save()
         return redirect('/')
-    return render(request, 'add_estate.html', {'form':form})    
+    return render(request, 'add_estate.html', {'form':form})

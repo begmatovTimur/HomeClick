@@ -11,6 +11,7 @@ CURRENCY = [
     (EURO, (EURO)),
 ]
 
+
 LAND = "Участок"
 FLAT = "Квартира"
 ESTATE_TYPE = [
@@ -18,12 +19,12 @@ ESTATE_TYPE = [
     (FLAT, ('Квартира')),
 ]
 
+
 class Category(models.Model):
     name = models.CharField(verbose_name="Категории", max_length=64)
 
     def __str__(self):
         return self.name
-
 
 
 class Estate(models.Model):
@@ -48,5 +49,6 @@ class Estate(models.Model):
         return self.get_title()
 
 
-
-
+class Photo(models.Model):
+    img = models.ImageField()
+    estate = models.ForeignKey(Estate, on_delete=models.CASCADE, related_name='photos')
