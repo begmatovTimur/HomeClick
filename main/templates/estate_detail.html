@@ -33,7 +33,8 @@
         </div>
 
       {% for photo in photos.all %}        
-        <div class="text-center">
+        <div class="img-thumbnail text-center container">
+          <p class="h3 mt-3">Фото недвижемости</p>
           <img src="{{ photo.img.url }}" alt="">
         </div>
       {% endfor %}
