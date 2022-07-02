@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 
 {% block body %}
+
+{% if user.is_authenticated %}
   <div class="col-md-6 container">
     <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
       <div class="col p-4 d-flex flex-column position-static">
@@ -40,4 +42,16 @@
       {% endfor %}
     </div>
   </div>
+{% else %}
+<div class="container text-center">
+  <h3 class="">Простите произошла ошибка</h3> 
+
+  <img src="https://grandproject.ru/upload/iblock/37b/37b2ccdd57785ae2ff1ced9a818fc4f8.png" alt="">
+
+  <p class="h4">Сначала авторизуйтесь что бы смотреть детальную информацию недвижемости</p>
+
+  <a href="{% url 'authentication' %}" class="btn btn-primary">Авторизоваться</a>
+</div>
+{% endif %}
+
 {% endblock %}

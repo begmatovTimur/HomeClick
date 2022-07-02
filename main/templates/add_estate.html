@@ -2,59 +2,72 @@
 
 {% block body %}
 
-<div class="container">
-    <form action="" enctype="multipart/form-data" method="POST">
-        {% csrf_token %}
+{% if user.is_authenticated %}
+    <div class="container">
+        <form action="" enctype="multipart/form-data" method="POST">
+            {% csrf_token %}
 
-        <div class="container mb-3 w-50 p-3">
-            <p class="text-primary">Введите название</p>
-            {{ form.title }}
-        </div>
+            <div class="container mb-3 w-50 p-3">
+                <p class="text-primary">Введите название</p>
+                {{ form.title }}
+            </div>
 
-        <div class="container mb-3 w-50 p-3">
-            <p class="text-primary">Введите описание недвижемости</p>
-            {{ form.description }}
-        </div>
+            <div class="container mb-3 w-50 p-3">
+                <p class="text-primary">Введите описание недвижемости</p>
+                {{ form.description }}
+            </div>
 
-        <div class="container mb-3 w-50 p-3">
-            <p class="text-primary">Выберите Автора</p>
-            {{ form.author }}
-        </div>
+            <div class="container mb-3 w-50 p-3">
+                <p class="text-primary">Выберите Автора</p>
+                {{ form.author }}
+            </div>
 
-        <div class="container mb-3 w-50 p-3">
-            <p class="text-primary">Введите цену</p>
-            {{ form.price }}
-        </div>
+            <div class="container mb-3 w-50 p-3">
+                <p class="text-primary">Введите цену</p>
+                {{ form.price }}
+            </div>
 
-        <div class="container mb-3 w-50 p-3">
-            <p class="text-primary">Выберите валюту</p>
-            {{ form.currency }}
-        </div>
+            <div class="container mb-3 w-50 p-3">
+                <p class="text-primary">Выберите валюту</p>
+                {{ form.currency }}
+            </div>
 
-        <div class="container mb-3 w-50 p-3">
-            <p class="text-primary">Выберите категории</p>
-            {{ form.categories }}
-        </div>
+            <div class="container mb-3 w-50 p-3">
+                <p class="text-primary">Выберите категории</p>
+                {{ form.categories }}
+            </div>
 
-        <div class="container mb-3 w-50 p-3">
-            <p class="text-primary">Введите количество комнат</p>
-            {{ form.room_amount }}
-        </div>
+            <div class="container mb-3 w-50 p-3">
+                <p class="text-primary">Введите количество комнат</p>
+                {{ form.room_amount }}
+            </div>
 
-        <div class="container mb-3 w-50 p-3">
-            <p class="text-primary">Введите площадь</p>
-            {{ form.area }}
-        </div>
+            <div class="container mb-3 w-50 p-3">
+                <p class="text-primary">Введите площадь</p>
+                {{ form.area }}
+            </div>
 
-        <div class="container mb-3 w-50 p-3">
-            <p class="text-primary">Выберите тип недвижемости</p>
-            {{ form.type }}
-        </div>
+            <div class="container mb-3 w-50 p-3">
+                <p class="text-primary">Выберите тип недвижемости</p>
+                {{ form.type }}
+            </div>
 
-        <div class="container mb-3 w-50 p-3">
-            <button type="submit" class="btn btn-primary">Добавить</button>
-        </div>
-    </form>
-</div>
+            <div class="container mb-3 w-50 p-3">
+                <button type="submit" class="btn btn-primary">Добавить</button>
+            </div>
+        </form>
+    </div>
+    
+{% else %}
+    <div class="container text-center">
+        <h3 class="">Простите произошла ошибка</h3> 
+
+        <img src="https://grandproject.ru/upload/iblock/37b/37b2ccdd57785ae2ff1ced9a818fc4f8.png" alt="">
+
+        <p class="h4">Сначала авторизуйтесь что бы добавить недвижемости</p>
+
+        <a href="{% url 'authentication' %}" class="btn btn-primary">Авторизоваться</a>
+    </div>
+{% endif %}
 
 {% endblock %}
